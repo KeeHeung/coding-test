@@ -1,38 +1,23 @@
 import java.util.*;
-import static java.util.Arrays.copyOfRange;
 
 class Solution {
-    public int solution(int[] arr) {
+    public int solution(int[] arr) { //리팩토링한 코드
 
-		int count = 0;
-		int[] tempBefore = copyOfRange(arr, 0, arr.length);
-		int[] tempAfer = copyOfRange(tempBefore, 0, tempBefore.length);
-
+		int answer = 0;
 		while (true) {
+			int[] temp = Arrays.copyOf(arr, arr.length);
 			for (int i = 0; i < arr.length; i++) {
-				int idxNum = tempBefore[i];
-				if (idxNum >= 50 && idxNum % 2 == 0) tempBefore[i] = idxNum / 2;
-				else if (idxNum < 50 && idxNum % 2 != 0) tempBefore[i] = idxNum * 2 + 1;
-				else tempBefore[i] = idxNum;
+				if (temp[i] >= 50 && temp[i] % 2 == 0) temp[i] = temp[i] / 2;
+				else if (temp[i] < 50 && temp[i] % 2 != 0) temp[i] = temp[i] * 2 + 1;
 			}
-
-			for (int i = 0; i < arr.length; i++) {
-				int idxNum = tempBefore[i];
-				if (idxNum >= 50 && idxNum % 2 == 0) tempAfer[i] = idxNum / 2;
-				else if (idxNum < 50 && idxNum % 2 == 0) tempAfer[i] = idxNum;
-				else if (idxNum < 50 && idxNum % 2 != 0) tempAfer[i] = idxNum * 2 + 1;
-				else tempAfer[i] = idxNum;
+			if (Arrays.equals(arr, temp)) {
+				break;
+			} else {
+				arr = temp;
+				answer++;
 			}
-			if (Arrays.equals(tempBefore, tempAfer)) {
-				if(count != 0) {
-					count++;
-					break;
-				} else {
-					break;
-				}
-			} else {count++;}
-
 		}
-        return count;
+        
+        return answer;
     }
 }
