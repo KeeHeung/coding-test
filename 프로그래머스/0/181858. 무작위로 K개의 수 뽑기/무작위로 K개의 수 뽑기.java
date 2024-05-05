@@ -9,8 +9,8 @@ class Solution {
 
 		int[] answer = new int[k];
 		for (int i = 0; i < answer.length; i++) {
-			if (i >= list.size()) answer[i] = -1;
-			else answer[i] = list.get(i);
+			if (i < list.size()) answer[i] = list.get(i);
+			else answer[i] = -1;
 		}
         
         return answer;
