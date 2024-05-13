@@ -3,14 +3,10 @@ class Solution {
         
         int answer = 0;
         
-		String[] nums = new String[array.length];
-		for (int i = 0; i < nums.length; i++) {
-			nums[i] = Integer.toString(array[i]);
-		}
-
-		for (int i = 0; i < nums.length; i++) {
-			for (int j = 0; j < nums[i].length(); j++) {
-				if ((nums[i].charAt(j)+"").equals("7") ) answer++;
+		for (int i = 0; i < array.length; i++) {
+			String str = String.valueOf(array[i]);
+			for (int j = 0; j < str.length(); j++) {
+				if (str.charAt(j) == '7') answer++;
 			}
 		}
         
