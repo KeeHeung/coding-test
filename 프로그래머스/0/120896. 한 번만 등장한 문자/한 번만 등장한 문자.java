@@ -4,7 +4,6 @@ class Solution {
     public String solution(String s) {
 		char[] sList = s.toCharArray();
 
-		String answer = "";
 		ArrayList<Character> charArray = new ArrayList<>();
 		for (int i = 0; i < sList.length; i++) {
 			int cnt = 0;
