@@ -7,7 +7,6 @@ class Solution {
 			int cnt = 0;
 			for (int i = 0; i < spell.length; i++) {
 				if (d.contains(spell[i])) cnt++;
-				else cnt--;
 			}
 			if (cnt == spell.length) return 1;
 		}
