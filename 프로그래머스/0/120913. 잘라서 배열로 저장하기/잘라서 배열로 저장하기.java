@@ -3,22 +3,13 @@ import java.util.*;
 class Solution {
     public String[] solution(String my_str, int n) {
        
-		Double cnt = (double) Math.ceil((double) my_str.length() / n) ;
-		String[] answer = new String[cnt.intValue()];
-		
-        int j = 0;
-		for (int i = 0; i < cnt.intValue(); i++) {
-			if (my_str.length() % n == 0) {
-				answer[i] = my_str.substring(j, j+n);
-			} else {
-				if (i == cnt - 1) {
-					answer[i] = my_str.substring(j);
-				} else {
-					answer[i] = my_str.substring(j, j+n);
-				}
-			}
+		int len = (my_str.length() % n == 0) ? (my_str.length() / n) : ((my_str.length() / n) + 1);
 
-			j = j + n ;
+		String[] answer = new String[len];
+		for (int i = 0; i < len; i++) {
+			int start = n * i;
+			int end = start + n >= my_str.length()? my_str.length(): start + n;
+			answer[i] = my_str.substring(start, end);
 		}
         
         return answer;

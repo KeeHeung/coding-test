@@ -1,10 +1,10 @@
 # [level 0] 잘라서 배열로 저장하기 - 120913 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120913#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120913) 
 
 ### 성능 요약
 
-메모리: 76.1 MB, 시간: 0.31 ms
+메모리: 74.1 MB, 시간: 0.05 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 05월 27일 23:59:47
+2024년 05월 28일 00:10:29
 
 ### 문제 설명
 
